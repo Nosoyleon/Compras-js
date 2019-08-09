@@ -1,7 +1,6 @@
 const products = require("./products");
-const quantity = require("./quantity");
+const productsList = require("./shopping-list");
 const clients = require("./clients");
-const costs = require("./costs");
 
 /**
  * Puedes crear las variables y funciones necesarias para que el sistema funcione.
@@ -11,27 +10,6 @@ los siguientes descuentos:
  * Cristian Vega: 10%
  * Jesse Cogollo: 2%
  **/
-
-const productsListIds = [34, 1, 9, 8, 23, 11, 40, 14, 6, 33, 29, 20, 41, 15, 5];
-const productsQuantities = [
-  2,
-  5,
-  3,
-  9,
-  2,
-  4,
-  2,
-  3,
-  10,
-  8,
-  6,
-  12,
-  4,
-  5,
-  2,
-  7,
-  7
-];
 
 /** 
  * Requerimientos:
@@ -47,38 +25,39 @@ const productsQuantities = [
 // Funciones adicionales aquí...
 
 // TODO: Función Principal getCostList
-function getCostList(client, productsIds, quantities) {
-  console.log(productsIds, quantities);
+function getCostList(client, productsList) {
   var total = 0;
-  productsIds.forEach((element, index) => {
+  productsList.forEach(item => {
     var subtotal;
-    var inventario = quantity[element];
-    var pedidousuario = quantities[index];
-    if (inventario >= pedidousuario) {
-      subtotal = pedidousuario * costs[element];
+    const cantidadAComprar = item.quantity;
+    const productoAComprar = item.id;
+    var productEnInventario = products.find(productItem => productItem.id === productoAComprar);
+
+    if (productEnInventario.quantity >= cantidadAComprar) {
+      subtotal = cantidadAComprar * productEnInventario.cost;
     } else {
-      subtotal = inventario * costs[element];
+      subtotal = productEnInventario.quantity * productEnInventario.cost;
     }
-    // console.log(subtotal);
     total = subtotal + total;
+  
   });
+
   if (client === "Cristian Vega") {
     total = total - total * 0.1;
-    // console.log("este es el valor de compra Cris" + total);
+    console.log("este es el valor de compra Cris: " + total);
   } else if (client === "León Ceballos") {
     total = total - total * 0.05;
-    // console.log("este es el valor de compra Juan" + total);
+    console.log("este es el valor de compra Juan: " + total);
   } else if (client === "Jesse Cogollo") {
     total = total - total * 0.02;
-    // console.log("este es el vaor compra jesse" + total);
+    console.log("este es el vaor compra jesse: " + total);
   } else {
     total = total;
   }
   return total.toFixed(2);
 }
 
-const result = getCostList(clients[0], productsListIds, productsQuantities);
-// const result = 'hey';
+const result = getCostList(clients[0], productsList);
 
 // Imprime el total de la compra
 console.log("El total de la compra es: " + result);
