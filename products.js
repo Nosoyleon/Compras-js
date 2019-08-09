@@ -1,46 +1,56 @@
 module.exports = [
-  "Harina de trigo",
-  "Harina para tortas",
-  "Pasta para sopa",
-  "Cereal para desayuno",
-  "Cereal alimento para bebé",
-  "Avena hojuelas",
-  "Avena molida",
-  "Cebada",
-  "Cuchuco de maíz",
-  "Cuchuco de trigo",
-  "Galletas dulces",
-  "Galletas integrales",
-  "Arepa precocida",
-  "Ajo",
-  "Cilantro",
-  "Frijol tarro",
-  "Arveja tarro",
-  "Melocotones o variedad disponible en conserva",
-  "Carne de cerdo con hueso",
-  "Pollo despresado por libra",
-  "Pescado enlatado",
-  "Crema de leche",
-  "Mantequilla",
-  "Suero",
-  "Aceite de girasol",
-  "Manteca vegetal",
-  "Café instantáneo",
-  "Chocolate instantáneo",
-  "Cremas",
-  "Mayonesa",
-  "Mostaza",
-  "Gelatina o flan",
-  "Papas fritas",
-  "Mermeladas",
-  "Jugos procesados",
-  "Jugos instantáneos o en polvo",
-  "Maltas",
-  "Agua mineral",
-  "Almuerzo especial o a la carta",
-  "Pizza",
-  "Combos – comidas rápidas",
-  "Arepas rellenas de algo",
-  "Helado de crema",
-  "Ensalada de frutas"
+  {
+    id: 1,
+    name: "Harina de trigo",
+    costs: 3290.11,
+    quantity: 1
+  },
+  {
+    id: 2,
+    name: "Pasta para sopa",
+    costs: 8471,
+    quantity: 2
+  },
+  {
+    id: 3,
+    name: "Cereal para desayuno",
+    costs: 1323.2,
+    quantity: 3
+  },
+  {
+    id: 4,
+    name: "Cereal alimento para bebé",
+    costs: 15100,
+    quantity: 43
+  },
+  {
+    id: 5,
+    name: "Avena hojuelas",
+    costs: 3290.11,
+    quantity: 21
+  },
+  {
+    id: 6,
+    name: "Avena molida",
+    costs: 3290.11,
+    quantity: 1
+  },
+  {
+    id: 7,
+    name: "Cebada",
+    costs: 3290.11,
+    quantity: 5
+  },
+  {
+    id: 8,
+    name: "Cuchuco de maíz",
+    costs: 3290.11,
+    quantity: 45
+  },
+  {
+    id: 9,
+    name: "Cuchuco de trigo",
+    costs: 3290.11,
+    quantity: 12
+  }
 ];
