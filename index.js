@@ -74,10 +74,11 @@ function getCostList(client, productsIds, quantities) {
   } else {
     total = total;
   }
-  console.log(total.toFixed(2));
+  return total.toFixed(2);
 }
 
 const result = getCostList(clients[0], productsListIds, productsQuantities);
+// const result = 'hey';
 
 // Imprime el total de la compra
 console.log("El total de la compra es: " + result);
